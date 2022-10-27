@@ -1,6 +1,12 @@
+# ignonre all  __pycache__ 
 **/__pycache__
 **/**/__pycache__/*
-.pytest_cache
 
+# ignore all vscode files
+.pytest_cache
+.vscode
+
+# ignore alembic files
+.alembic
 
 poetry.lock
