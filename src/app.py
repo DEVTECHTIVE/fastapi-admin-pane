@@ -1,9 +1,4 @@
-from __init__ import *
-
-
-@app.get("/")
-def root(request: Request):
-    return template.TemplateResponse("base.html", {"request": request})
+from modules import *
 
 
 if __name__ == "__main__":
