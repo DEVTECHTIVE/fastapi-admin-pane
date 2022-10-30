@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Login</title>
+{% endblock head %}
+
+{% block body %}
+    <div class="w-screen h-screen flex justify-center items-center bg-gray-50">
+        <div class="flex w-[40vw] h-[70vh] border flex-col rounded-md shadow-md items-center justify-center p-5 bg-white">
+            <h1 class="text-3xl font-bold p-5">Admin Login</h1>
+            <form action=""  class="w-full flex flex-col items-center justify-center p-10">
+                <label for="username" class=" w-full p-5 flex flex-col">
+                    <span class="font-light block">Username</span>
+                    <input type="text" name="username" id="username">
+                </label>
+                <label for="password" class=" w-full p-5 flex flex-col">
+                    <span class="font-light block">Passwrod</span>
+                    <input type="password" name="password" id="password">
+                </label>
+                <div class="text-red-500 py-5 font-bold" id="msg"></div>
+                <button  class="w-full h-[40px] bg-sky-500 rounded-md font-bold text-xl" id="login">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('public', path='asset/javascripts/login.js') }}"></script>
+{% endblock body %}

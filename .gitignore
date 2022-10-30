@@ -2,11 +2,14 @@
 **/__pycache__
 **/**/__pycache__/*
 
+# ignore node_modules
+**/node_modules
+
 # ignore all vscode files
 .pytest_cache
 .vscode
 
 # ignore alembic files
-.alembic
+alembic
 
 poetry.lock

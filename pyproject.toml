@@ -25,6 +25,9 @@ pytest = "^7.2.0"
 
 [tool.poetry.scripts]
 start = "adminpane.script:start"
+alembic = "adminpane.script:alembic"
+makemigration = "adminpane.script:makemigration"
+migration = "adminpane.script:migration"
 
 [build-system]
 requires = ["poetry-core"]
