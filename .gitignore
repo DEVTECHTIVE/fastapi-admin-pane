@@ -2,6 +2,8 @@
 **/__pycache__
 **/**/__pycache__/*
 
+**/versions/*
+
 # ignore node_modules
 **/node_modules
 
@@ -9,7 +11,5 @@
 .pytest_cache
 .vscode
 
-# ignore alembic files
-alembic
 
 poetry.lock

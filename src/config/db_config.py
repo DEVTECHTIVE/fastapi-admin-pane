@@ -1,4 +1,7 @@
-from modules import create_engine, sessionmaker, declarative_base, os
+from sqlalchemy import create_engine, func
+from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.ext.declarative import declarative_base
+import os
 
 engines = create_engine(os.getenv("DATABASE_URL"))
 Base = declarative_base()

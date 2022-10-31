@@ -6,11 +6,6 @@ def start():
     subprocess.call(cmd, shell=True)
 
 
-def alembic():
-    cmd = ["poetry", "run", "alembic", "init", "alembic"]
-    subprocess.call(cmd, shell=True)
-
-
 def migration():
     cmd = ["poetry", "run", "alembic", "upgrade", "head"]
     subprocess.call(cmd, shell=True)

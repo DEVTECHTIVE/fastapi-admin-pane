@@ -1,31 +1,36 @@
-const get_user = username => {
-  $.ajax({
-    url: `localhost:8000/users/{username}`,
-    type: 'GET',
-    success: function (data) {
-      console.log(data);
-      return data;
-    }.bind(this),
-    error: function (xhr, status, err) {
-      console.error(status, err.toString());
-      return null;
-    }.bind(this),
-  });
-};
-
 $(document).ready(function () {
   let username = $('#username');
   let password = $('#password');
   let msg = $('#msg');
   let login = $('#login');
 
-  username.focusout(() => {
+  const get_user = username => {
+    let res = $.ajax({
+      url: `/user/${username}`,
+      type: 'GET',
+      async: false,
+      success: function (data) {
+        return data;
+      },
+      error: function (err) {
+        return err;
+      },
+    }).responseText;
+    return JSON.parse(res);
+  };
+
+  username.focusout(function () {
+    user = username.val();
     const data = get_user(username.val());
-    if (username.val() == data.username) {
-      console.log('username is valid');
-    } else {
-      msg.text('username is invalid');
+    if (data === null || data === undefined) {
+      msg.text('Username not found');
+    } else if (data.message === 'User not found') {
+      msg.text('Username not found');
     }
+  });
+
+  username.keypress(function (e) {
+    msg.text('');
   });
 
   login.click(function (e) {
